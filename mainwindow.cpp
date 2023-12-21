@@ -17,7 +17,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_lineEdit_5_textEdited(const QString &arg1)
 {
    // Default
@@ -27,37 +26,27 @@ void MainWindow::on_lineEdit_5_textEdited(const QString &arg1)
    ui->lineEdit_3->setText(QString::number(digit));
    ui->lineEdit_10->setText(QString::number(digit));
 
-
-////////
    double tofar =((digit)*5/9+32);
    tofar = round(tofar*10)/10;
    ui->lineEdit_2->setText(QString::number(tofar));
-
-
-
 
    double tokel =((digit)+273.15);
    tofar = round(tokel*10)/10;
    ui->lineEdit_6->setText(QString::number(tokel));
 
+    double tocel=(digit-32)*5/9;
+    tocel=round(tocel*10)/10;
+    ui->lineEdit_4->setText(QString::number(tocel));
+    double kel=(digit-32)*5/9+273.15;
+    kel=round(kel*10)/10;
+    ui->lineEdit_7->setText(QString::number(kel));
 
-////////
-
-      double tocel=(digit-32)*5/9;
-      tocel=round(tocel*10)/10;
-      ui->lineEdit_4->setText(QString::number(tocel));
-     double kel=(digit-32)*5/9+273.15;
-        kel=round(kel*10)/10;
-        ui->lineEdit_7->setText(QString::number(kel));
-
-///////
-
-        double kfar=(digit-273.15)*9/5+32;
-        kfar= round(kfar*10)/10;
-          ui->lineEdit_9->setText(QString::number(kfar));
-        double kcel=digit-273.15;
-                kcel=round(kcel*10)/10;
-          ui->lineEdit_8->setText(QString::number(kcel));
+    double kfar=(digit-273.15)*9/5+32;
+    kfar= round(kfar*10)/10;
+    ui->lineEdit_9->setText(QString::number(kfar));
+    double kcel=digit-273.15;
+    kcel=round(kcel*10)/10;
+    ui->lineEdit_8->setText(QString::number(kcel));
 
    if(input==""|| input=="-")
     {
@@ -65,7 +54,7 @@ void MainWindow::on_lineEdit_5_textEdited(const QString &arg1)
     ui->lineEdit_6->setText("");
     ui->lineEdit_2->setText("");
     ui->lineEdit->setText("");
-     ui->lineEdit_8->setText("");
+    ui->lineEdit_8->setText("");
     ui->lineEdit_3->setText("");
     ui->lineEdit_10->setText("");
     ui->lineEdit_7->setText("");
